@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header Carousel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+
+    .carousel {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slide 50s infinite;
+    }
+
+    .slide {
+      flex: 1 0 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide1 { background-image : url('images/sapi-kesehatan.jpg'); }
+    .slide2 { background-image: url('https://picsum.photos/id/1025/1200/400'); }
+    .slide3 { background-image: url('https://picsum.photos/id/1005/1200/400'); }
+
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    .text-header {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+
+    .text-header h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="carousel">
+    <div class="slide slide1"></div>
+    <div class="slide slide2"></div>
+    <div class="slide slide3"></div>
+  </div>
+  <div class="overlay"></div>
+  <div class="text-header">
+    <h1>Selamat Datang</h1>
+  </div>
+</header>
+
+</body>
+</html>
